@@ -1,0 +1,125 @@
+﻿@using WebApplication5.Models;
+
+@{
+    ViewBag.Title = "cricketLog";
+}
+
+<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:red">
+    <div class="panel-heading" style="background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">CRICKET LOGS</h1></div>
+    <div class="panel-body" style="background-color:black">
+
+        <div style="color:red">
+
+            @using (Html.BeginForm())
+            {
+                <div class="form-group">
+                    @Html.Label("SELECT DIVISION", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="form-group">@Html.DropDownList("ddld", null, "SELECT DIVISION:", new { @class = "form-control", onchange = "this.form.submit();" })</div>
+                    </div>
+                </div>
+                <p style="color:black">.</p>
+
+                <table style="text-align:center; color:white;width:100%" class="table">
+                    <tr style="border-bottom:solid">         
+                        <th>
+                            <div class="tt">#<span class="ttext">Position</span></div>
+                        </th>
+                        <th>
+                            <div class="tt">Team<span class="ttext">Team Name</span></div>
+                        </th>
+                        <th>
+                            <div class="tt">P<span class="ttext">Played</span></div>
+                        </th>
+                        <th>
+                            <div class="tt">W<span class="ttext">Wins</span></div>
+                        </th>
+                        <th>
+                            <div class="tt">D<span class="ttext">Draws</span></div>
+                        </th>
+                        <th>
+                            <div class="tt">L<span class="ttext">Losses</span></div>
+                        </th>
+                        <th>
+                            <div class="tt">NRR<span class="ttext">Net Run Rate</span></div>
+                        </th>
+                        <th>
+                            <div class="tt">Pts<span class="ttext">Points</span></div>
+                        </th>
+                    </tr>
+                    @if (ViewData["Results"] != null)
+                    {
+                        int count = 0;
+                        foreach (CricketLog res in (IEnumerable<CricketLog>)ViewData["Results"])
+                        {
+                            count++;
+                            <tr>
+                                <td>@count</td>
+                                <td>@res.TeamName</td>
+                                <td>@res.totalm</td>
+                                <td>@res.Wins</td>
+                                <td>@res.Draws</td>
+                                <td>@res.Losses</td>
+                                <td>@res.NetRunRate</td>
+                                <td>@res.Points</td>
+                            </tr>
+                        }
+                    }
+                </table>
+
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+    }
+    th{
+        text-align:center;
+        font-size:17px;
+    }
+    .tt{
+        position:relative;
+        display:inline-block;
+        border-bottom:1px dotted black;
+    }
+    .tt .ttext{
+        visibility:hidden;
+        width:120px;
+        background-color:#62635f;
+        color:#fff;
+        text-align:center;
+        border-radius:5px;
+        padding:5px 0;
+        position:absolute;
+        z-index:1;
+        bottom:125%;
+        left:50%;
+        margin-left:-60px;
+        opacity:0.5;
+    }
+    .tt .ttext::after{
+        content:"";
+        position:absolute;
+        top:100%;
+        left:50%;
+        margin-left:-5px;
+        border-width:5px;
+        border-style:solid;
+        border-color:#555 transparent;
+    }
+    .tt:hover .ttext{
+        visibility:visible;
+        opacity:1;
+    }
+</style>
+
+
+

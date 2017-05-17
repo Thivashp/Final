@@ -1,0 +1,78 @@
+﻿@model WebApplication5.Models.CricketPlayers
+
+@{
+    ViewBag.Title = "Delete";
+}
+<br /><br />
+<div class="panel panel-primary" style="border-color:red">
+    <div class="panel-heading" style="background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px"> REMOVE PLAYER</h1></div>
+    <div class="panel-body" style="background-color:black">
+      
+
+            <h3 style="color:red">Are you sure you want to delete this?</h3>
+            <div>
+
+                <hr />
+                <dl class="dl-horizontal" style="color:white">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.firstName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.firstName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.lastName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.lastName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TeamN)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TeamN)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.EmailAdd)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.EmailAdd)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.PlayerRole)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.PlayerRole)
+                    </dd>
+
+                    
+
+                </dl>
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+            <style>
+                body {
+                    padding: 50px;
+                    background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+                }
+            </style>

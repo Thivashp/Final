@@ -1,0 +1,94 @@
+﻿
+@{
+    Layout = null;
+}
+<br />
+<br />
+<h1 style="text-align:center;font-family:'Adobe Arabic' ;font-size:100px; color:white">COURT ONE</h1>
+<h4 style="text-align:center;font-family:'Adobe Arabic' ; color:white">PUBLIC</h4>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="~/Content/calendar.css">
+
+
+</head>
+
+@* HTML *@
+
+
+<div ng-app="myApp" ng-controller="myNgController">
+
+    <script type="text/ng-template" id="modalContent.html">
+        <div class="modal-header">
+           
+        </div>
+        <div class="modal-body">
+            <div class="error">{{Message}}</div>
+            <div class="form-group">
+                <label>Please </label>
+                
+            </div>
+            <div class="form-group">
+                <label>Log in  or register</label>
+                
+            </div>
+            <div class="form-group">
+                <label>before proceeding</label>
+                
+            </div>
+        </div>
+        <div class="modal-footer">
+           
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
+        </div>
+    </script>
+    <div class="row">
+        <div class="col-md-12" style="background: #396c2d">
+            <div id="calendar" ui-calendar="uiConfig.calendar" ng-model="eventSources" calendar="myCalendar"></div>
+
+            <input class="btn btn-default" id="Button1" type="button" value="Go Back" style="color:white;background-color:darkgreen" onclick="window.open('IndexPublic')" />
+
+        </div>
+
+
+    </div>
+</div>
+
+@* CSS *@
+<link href="~/Content/fullcalendar.css" rel="stylesheet" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" />
+@* JS *@
+<script src="~/Scripts/moment.js"></script>
+<script src="~/Scripts/jquery-1.11.3.js"></script>
+@*<script src="~/Scripts/angular.js"></script>*@
+@* Will use latest angularjs *@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0/angular.js"></script>
+<script src="~/Scripts/calendar.js"></script>
+<script src="~/Scripts/fullcalendar.js"></script>
+<script src="~/Scripts/gcal.js"></script>
+@* OUR ANGULAR COMPONENTs *@
+<script src="~/Scripts/MyApp.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.2/ui-bootstrap-tpls.min.js"></script>
+<style>
+    .error {
+        color: red;
+    }
+</style>
+
+<style>
+    .fc-event {
+        position: relative; /* for resize handle and other inner positioning */
+        display: block; /* make the <a> tag block */
+        font-size: .85em;
+        line-height: 1.3;
+        border-radius: 3px;
+        border: 1px solid white; /* default BORDER color */
+        background-color: red; /* default BACKGROUND color */
+        font-weight: normal; /* undo jqui's ui-widget-header bold */
+        text-decoration-color: white;
+    }
+    body {
+        padding: 50px;
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+    }
+</style>

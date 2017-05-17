@@ -1,0 +1,68 @@
+﻿@model WebApplication5.Models.Fixtures
+
+@{
+    ViewBag.Title = "Fixture";
+}
+
+<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:blue">
+    <div class="panel-heading" style="background-color:black;border-color:blue"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">UPDATE FIXTURE</h1></div>
+    <div class="panel-body" style="background-color:black;border-color:blue">
+
+        <br />
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal" style="color:white">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Id)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.fixture, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.fixture, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.fixture, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    @Html.Label("SELECT REFEREE", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                     @Html.DropDownList("selectRef", null, "REFEREE", new { @class = "form-control" })</div>
+                    </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.division, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.division, new { htmlAttributes = new { @class = "form-control", @readonly="readonly" } })
+                        @Html.ValidationMessageFor(model => model.division, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+               
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input style="color:white;background-color:blue" type="submit" value="Update" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Return", "FixtureSelect")
+        </div>
+        <style>
+            body {
+                padding: 50px;
+                background-image: url('http://safest.link/wp-content/uploads/2015/06/Hd-Wall-Backgrounds-Hd-Cool-HD-Wallpapers.jpg');
+            }
+        </style>

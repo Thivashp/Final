@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WebApplication5.Models.ApplicationUser>
+<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading" style="background-color:#292929"><h1 style="font-family:Impact" font:larger"> Roles</h1></div>
+    <div class="panel-body">
+        <p class="p">
+            <h2 style="color:black;font-size:xx-large">Roles Listing </h2>
+            <h3 style="font-size:x-large">@Html.ActionLink("Create New Role", "Create") | @Html.ActionLink("Manage User Role", "ManageUserRoles")</h3>
+            <hr />
+
+            @foreach (var role in Model)
+            {
+            <p>
+                <strong>@role.UserName| </strong>
+                <span onclick="return confirm('Are you sure to delete?')"><a href="/Roles/Delete?RoleName=@role.UserName" class="delLink" style="color:red;">Delete</a></span> |
+
+            </p>
+
+            }
+            <div />
+        </div>
+</div>
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+    }
+</style>

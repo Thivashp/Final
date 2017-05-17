@@ -1,0 +1,102 @@
+﻿@model IEnumerable<WebApplication5.Models.CricketPlayers>
+@{
+    ViewBag.Title = "VerifyS";
+}
+<br /><br />
+<h1 style="font-size:20px;color:white">SELECT SPORT|PERSONAL DETAILS|ADD PLAYERS|<a style="font-size:20px;color:yellow">CONFIRM DETAILS</a>|PAYMENT</h1>
+
+<br /><br />
+
+
+        <div class="panel panel-primary" style="border-color:red">
+            <div class="panel-heading" style="background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">PLAYER INFORMATION</h1></div>
+            <div class="panel-body" style="background-color:black">
+
+
+                <div style="text-align:center;font-size:large; color:white">
+                    @Html.Label("" + @Session["fn"].ToString()) <br />
+                    @Html.Label("" + @Session["ln"].ToString())<br />
+                    @Html.Label(@Session["dob"].ToString())<br />
+                    @Html.Label(@Session["pn"].ToString())<br />
+                    @Html.Label(@Session["costPR"].ToString())<br />
+                    @Html.Label(@Session["add"].ToString())<br />
+                    @Html.Label(@Session["tn"].ToString())<br />
+                </div>
+                <div class="panel-heading" style="background-color:black; border-bottom:solid; border-top:solid;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">LEAGUE INFORMATION</h1></div><br /><br />
+                <div style="text-align:center;font-size:large;color:white">
+                    @Html.Label("" + @Session["LeagueTitle"].ToString()) <br />
+                    @Html.Label("" + @Session["LeagueCategory"].ToString())<br />
+                    @Html.Label(@Session["LeagueSDte"].ToString())<br />
+                    @Html.Label(@Session["Regfee"].ToString())<br />
+                    @Html.Label(@Session["costPR"].ToString())<br />
+                </div>
+
+
+                <br />
+                <br />
+                <div class="panel-heading" style="background-color:black; border-bottom:solid; border-top:solid;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">TEAM MEMBER INFORMATION</h1></div>
+                @*@Html.Label("" + Session["TeamMem"].ToString())<br /><br />*@
+                <br />
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.firstName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.lastName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TeamN)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.EmailAdd)
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+            {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.firstName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.lastName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TeamN)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmailAdd)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+
+                <p class="button">
+                    <a class="btn btn-default" href="~/payment.aspx?total=@Session["Amount"].ToString()&div=@Session["Division"].ToString()&teamN=@Session["teamName"]&sportT=@Session["SportType"].ToString()"> Make Payment </a>
+                </p>
+                @*<input class="btn btn-default" type="button" value="RETURN" onclick="href=http://localhost:42139/payment.aspx?total=@Session["Amount"].ToString()&div=@Session["Division"].ToString()&teamN=@Session["teamName"]&sportT=@Session["SportType"].ToString()" />*@
+            </div>
+        </div>
+        <style>
+            body {
+                padding: 50px;
+                background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+            }
+             table 
+            {
+                text-align:center;
+            }
+            th{
+                color:white;
+                text-align:center;
+            }
+            td{
+                color:white;
+            }
+        </style>

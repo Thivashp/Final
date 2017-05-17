@@ -1,0 +1,82 @@
+﻿@model WebApplication5.Models.Referee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Referee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Surname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emailAdd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emailAdd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.yearsOXP)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.yearsOXP)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Experience)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Experience)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CurrTeam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CurrTeam)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

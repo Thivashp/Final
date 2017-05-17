@@ -1,0 +1,32 @@
+﻿@model Microsoft.AspNet.Identity.EntityFramework.IdentityRole
+<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading" style="background-color:#292929"><h1 style="font-family:Impact" font:larger"> Update Role Inforamtion</h1></div>
+    <div class="panel-body">
+
+        <h3 style="font-family:'Times New Roman';font-size:x-large">@Html.ActionLink("List Roles", "Index") | @Html.ActionLink("Manage User Role", "ManageUserRoles")</h3>
+        <hr />
+        <br />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            @Html.HiddenFor(model => model.Id)
+            <div style="color:black">
+                Role name
+            </div>
+            <p>
+                @Html.TextBoxFor(model => model.Name)
+            </p>
+            <input type="submit" value="Save" class="btn-block" style="background-color:#292929; color:white; height:30px;width:100px" />
+        }
+        </div>
+</div><style>
+    body {
+        padding: 50px;
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+    }
+</style>

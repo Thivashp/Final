@@ -1,0 +1,74 @@
+﻿@model WebApplication5.Models.CricketLog
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CricketLog</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TeamName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TeamName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.totalm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.totalm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Wins)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Wins)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Draws)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Draws)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Losses)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Losses)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NetRunRate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NetRunRate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Points)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Points)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

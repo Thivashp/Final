@@ -1,0 +1,90 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IEnumerable<WebApplication5.Models.CricketFixtures>
+
+
+@{
+    ViewBag.Title = "Fixtures";
+}
+
+<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:blue">
+    <div class="panel-heading" style="background-color:black;border-color:blue"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">VIEW FIXTURES</h1></div>
+    <div class="panel-body" style="background-color:black;border-color:blue">
+        @using (Html.BeginForm())
+        {
+            <center><div class="form-group">@Html.DropDownList("ddlS", null, "SELECT DIVISION", new { @class = "form-control", onchange = "this.form.submit();" })</div></center><br />
+            <center><label style="color:red;font-size:large"> @Session["SelectDiv"].ToString()</label></center>
+
+
+
+            if (Session["check45"].ToString() == "True")
+            {
+
+                <center>
+                    <select class="form-control" id="teamType" name="teamType" onchange="this.form.submit();">
+                        <option value="noselect">SELECT FIXTURE VIEW</option>
+                        <option value="va">VIEW ALL</option>
+                        <option value="vp">VIEW PLAYED</option>
+                        <option value="vu">VIEW UPCOMING</option>
+                    </select>
+                
+                 </center><center><label style="color:red;font-size:large"> @Session["SelectTeam"].ToString()</label></center>
+
+                            <p style="color:black">,</p>
+                            <table class="table">
+                                <tr style="color:white">
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.fixture)
+                                    </th>
+
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.refID)
+                                    </th>
+                                    <th>@Html.Label("EDIT MATCH")</th>
+
+                                    <th></th>
+                                </tr>
+                                @if (Session["check54"].ToString() == "True")
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr style="color:white">
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.fixture)
+                                            </td>
+
+                                            <td>
+                                                @Html.DisplayFor(modelItem => item.refID)
+                                            </td>
+                                            <td>
+                                                @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                                            </td>
+
+                                        </tr>
+                                    }
+                               
+                                }
+                            </table>
+
+
+            }
+
+
+
+        }
+
+    </div>
+</div>
+
+
+
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://safest.link/wp-content/uploads/2015/06/Hd-Wall-Backgrounds-Hd-Cool-HD-Wallpapers.jpg');
+    }
+</style>

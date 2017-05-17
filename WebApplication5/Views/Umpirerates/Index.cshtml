@@ -1,0 +1,81 @@
+﻿@model IEnumerable<WebApplication5.Models.Umpirerate>
+
+<br>
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:blue">
+    <div class="panel-heading" style="background-color:black;border-color:blue"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px"> UMPIRE RATINGS</h1></div>
+    <div class="panel-body" style="background-color:black">
+
+        <table class="table" style="color:white!important">
+            <tr>
+                <th>
+                    HOME COMMENT
+                </th>
+                <th>
+                    AWAY COMMENT
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.refID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fixture)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.home)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.away)
+                </th>
+
+                <th>
+                    HOME RATING
+                </th>
+                <th>
+                    AWAY RATING
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.homerating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.awayrating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.refID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fixture)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.home)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.away)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.hrating)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.arating)
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://safest.link/wp-content/uploads/2015/06/Hd-Wall-Backgrounds-Hd-Cool-HD-Wallpapers.jpg');
+    }
+</style>

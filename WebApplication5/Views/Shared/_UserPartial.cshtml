@@ -1,0 +1,185 @@
+﻿
+@if (User.IsInRole("Customer"))
+{
+    <style>
+        body {
+            padding: 50px;
+            background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+        }
+    </style>
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Profile", "Edit", "Customer")</li>
+
+               
+    </ul>
+    <li class="dropdown">
+        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Team Information <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li>@Html.ActionLink("Soccer Team Information", "CustSocT", "Customer", null, new { id = "Soccer Team Information" })</li>
+            <li>@Html.ActionLink("Cricket Team Information", "CustCrkT", "Customer", null, new { id = "Cricket Team Information" })</li>
+          
+        </ul>
+            
+    </li>
+
+    <li class="dropdown">
+        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Official Rating<span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li>@Html.ActionLink("Soccer", "RefRating", "RefRatings", null, new { id = "Soccer Team Information" })</li>
+            <li>@Html.ActionLink("Cricket", "umpirerate", "Umpirerates", null, new { id = "Cricket Team Information" })</li>
+
+        </ul>
+
+    </li>
+    <li class="dropdown">
+        <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Join League <span class="caret"></span></a>
+        <ul class="dropdown-menu" role="menu">
+            <li>@Html.ActionLink("Soccer", "JoinSLeague", "SoccerPlayers", null, new { id = "Soccer Team Information" })</li>
+            <li>@Html.ActionLink("Cricket", "JoinCLeague", "CricketPlayers.", null, new { id = "Cricket Team Information" })</li>
+
+        </ul>
+
+    </li>
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("Make A Booking", "IndexCustomer", "court1")</li>
+
+        <li>@Html.ActionLink("About", "About", "Home", null, new { id = "Cricket Team Information" })</li>
+        <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { id = "Cricket Team Information" })</li>
+    </ul>
+
+
+
+
+}
+else if (User.IsInRole("Employee"))
+{
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">CUSTOMER<b class="caret" style="opacity:0.5"></b></a>
+        <ul class="dropdown-menu" style="background-color:black">
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/Account/Register3">REGISTER WALK IN</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/Customer/Index1">VIEW CUSTOMER(S)</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/court1/IndexAdmin">MAKE A BOOKING</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+
+        </ul>
+    </li>
+
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">OFFICIALS<b class="caret" style="opacity:0.5"></b></a>
+        <ul class="dropdown-menu" style="background-color:black">
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/Referee/Create">CREATE REFEREE</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/Referee/SearchReferee">VIEW REFEREE(S)</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/RefRatings/Index">REFEREE RATING</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/umpire/Create">CREATE UMPIRE</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/umpire/SearchUmpire">VIEW UMPIRE(S)</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/Umpirerates/Index">UMPIRE RATING</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+
+        </ul>
+    </li>
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">MANAGE SOCCER LEAGUE<b class="caret" style="opacity:0.5"></b></a>
+        <ul class="dropdown-menu" style="background-color:black">
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li ><a style="color:white" href="~/SoccerLeague/Create">CREATE DIVISION</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/SoccerLeague/Index">VIEW DIVISION(S)</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/Fixture/FixtureSelect">CREATE FIXTURES</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/Fixture/Index">VIEW FIXTURES</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/SoccerResult/Results">UPDATE LOG</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/SoccerLog/soccerLog">VIEW LOG</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            </ul>
+    </li>
+
+
+
+    <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown">MANAGE CRICKET LEAGUE<b class="caret" style="opacity:0.5"></b></a>
+        <ul class="dropdown-menu" style="background-color:black">
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/CricketLeague/Create">CREATE DIVISION</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/CricketLeague/Index">VIEW DIVISION(S)</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/CricketFixtures/FixtureSelect">CREATE FIXTURES</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/CricketFixtures/Index">VIEW FIXTURES</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/CricketResults/Results">UPDATE LOG</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+            <li><a style="color:white" href="~/CricketLogs/cricketLog">VIEW LOG</a></li>
+            <li role="separator" class="divider" style="background-color:blue"></li>
+        </ul>
+    </li>
+    
+
+
+}
+else if (User.IsInRole("Admin"))
+{
+    <style>
+        body {
+            padding: 50px;
+            background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+        }</style>
+
+                <ul class="nav navbar-nav">
+                  
+                    
+                    <li><a style="color:white" href="~/Roles/Index">ROLES</a></li>
+                    <li><a style="color:white" href="~/Account/Register2">EMPLOYEE REGISTER</a></li>
+                    <li><a style="color:white" href="~/Customer/Index">EMPLOYEES</a></li>
+                </ul>
+                }
+
+
+                else
+                {
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                </ul>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" role="button" aria-expanded="false" href="#" data-toggle="dropdown">Logs <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>@Html.ActionLink("Cricket log", "cricketLog", "CricketLogs", null, new { id = "Cricket log" })</li>
+                        <li>@Html.ActionLink("Soccer log", "soccerLog", "SoccerLog", null, new { id = "Soccer log" })</li>
+                    </ul>
+
+                </li>
+
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("View All Bookings", "IndexPublic", "court1")</li>
+
+
+                </ul>
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<WebApplication5.Models.RefereeMatch>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fixtures)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fixtures)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.refereeID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.refereeID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.refereeID })
+        </td>
+    </tr>
+}
+
+</table>

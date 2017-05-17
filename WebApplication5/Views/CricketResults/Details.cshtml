@@ -1,0 +1,90 @@
+﻿@model WebApplication5.Models.CricketResults
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CricketResults</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeTeam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomeTeam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AwayTeam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AwayTeam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeRuns)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomeRuns)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AwayRuns)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AwayRuns)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HOversFaced)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HOversFaced)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AOversFaced)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AOversFaced)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HomeWickets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HomeWickets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AwayWickets)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AwayWickets)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.date)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.mId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

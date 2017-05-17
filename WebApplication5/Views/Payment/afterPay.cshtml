@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "afterPay";
+}
+<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:red">
+     <div class="panel-body" style="background-color:black;color:white">
+        
+        @if (Session["payment"].ToString() == "league")
+        {
+            <div class="panel-heading" style="background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:75px"> YOUR INFORMATION</h1></div>
+
+        <div style="text-align:center;font-size:large">
+            @Html.Label("" + @Session["fn"].ToString()) <br />
+            @Html.Label("" + @Session["ln"].ToString())<br />
+            @Html.Label(@Session["dob"].ToString())<br />
+            @Html.Label(@Session["pn"].ToString())<br />
+            @Html.Label(@Session["costPR"].ToString())<br />
+            @Html.Label(@Session["add"].ToString())<br />
+            @Html.Label(@Session["tn"].ToString())<br />
+        </div>
+        <div class="panel-heading" style="border-top:solid;border-bottom:solid;background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:65px">LEAGUE INFORMATION</h1></div><br />
+        <div style="text-align:center;font-size:large" ;color:white">
+            @Html.Label("" + @Session["LeagueTitle"].ToString()) <br />
+            @Html.Label("" + @Session["LeagueCategory"].ToString())<br />
+            @Html.Label(@Session["LeagueSDte"].ToString())<br />
+            @Html.Label(@Session["Regfee"].ToString())<br />
+            @Html.Label(@Session["costPR"].ToString())<br />
+        </div>
+
+
+        <br />
+        <br />
+
+        <div class="col-sm-2" style="color:white">
+            <div class="btn btn-default">@Html.ActionLink("Download Invoice", "CreatePdf", "Payment") </div>
+
+        </div>
+        }
+        else if (Session["payment"].ToString() == "court")
+        {
+            <div class="panel-heading" style="background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:75px"> YOUR INFORMATION</h1></div>
+
+            <div style="text-align:center;font-size:large">
+                @Html.Label("" + @Session["fn1"].ToString()) <br />
+                @Html.Label("" + @Session["ln1"].ToString())<br />
+                @Html.Label(""+User.Identity.Name)<br />
+              
+            </div>
+
+            <div class="panel-heading" style="border-top:solid;border-bottom:solid;background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:65px">COURT INFORMATION</h1></div><br />
+            <div style="text-align:center;font-size:large" ;color:white">
+                @Html.Label("" + @Session["title1"].ToString()) <br />
+                @Html.Label("" + @Session["start1"].ToString())<br />
+                @Html.Label(@Session["end1"].ToString())<br />
+                @Html.Label(@Session["Amount1"].ToString())<br />
+               
+            </div>
+
+            <div class="col-sm-2" style="color:white">
+                <div class="btn btn-default" style="color:white">@Html.ActionLink("Download Invoice", "CreatePdf", "Payment") </div>
+
+            </div>
+        }
+      
+    </div>
+</div>
+
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+    }
+</style>
+
+
+
+

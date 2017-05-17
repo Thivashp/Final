@@ -1,0 +1,138 @@
+﻿@model IEnumerable<WebApplication5.Models.CricketResults>
+
+@{
+    ViewBag.Title = "Results";
+}
+<br />
+<br />
+<br />
+<br />
+@using (Html.BeginForm())
+            {
+<div class="panel panel-primary" style="border-color:blue">
+    <div class="panel-heading" style="background-color:black;border-color:blue"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">UPDATE CRICKET RESULTS</h1></div>
+    <div class="panel-body" style="background-color:black;border-color:blue">
+        
+        
+           
+                @Html.AntiForgeryToken()
+            <div style="color:white">
+                <div class="form-group">
+                    @Html.Label(" ", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="form-group">@Html.DropDownList("ddld", null, "SELECT DIVISION", new { @class = "form-control", onchange = "this.form.submit();" })</div>
+                    </div>
+                </div>
+                <center><label style="color:red;font-size:large">@Session["validate2"]</label></center>
+                @if (Session["check"].ToString() == "True")
+                {
+                    <div class="form-group">
+                        @Html.Label(" ", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="form-group">@Html.DropDownList("ddlf", null, "SELECT TEAM", new { @class = "form-control", onchange = "this.form.submit();" })</div>
+                        </div>
+                    </div>
+
+                    //Home Team
+                    <div class="form-group">
+                        @Html.Label("HOME TEAM", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="text" name="AwayTeam" value="@Session["home"]" class="form-control" readonly />
+                            <br />
+                        </div>
+                    </div>
+
+                    <br />
+                    //Away Team
+                    <div class="form-group">
+                        @Html.Label("AWAY TEAM", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="text" name="AwayTeam" value="@Session["away"]" class="form-control" readonly />
+                            <br />
+                        </div>
+                    </div>
+                    //Home Runs
+                    <div class="form-group">
+
+                        @Html.Label("HOME RUNS", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBox("HRuns", null, new { @class = "form-control", @type = "number" })
+                            <br />
+                        </div>
+
+                    </div>
+                    <br />
+
+                    @*Away Runs*@
+                    <div class="form-group">
+                        @Html.Label("AWAY RUNS", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBox("ARuns", null, new { @class = "form-control", @type = "number" })
+                            <br />
+                        </div>
+                    </div>
+
+                    <br />
+                    @*Home Overs Faced*@
+                    <div class="form-group">
+                        @Html.Label("HOME OVERS FACED", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBox("HOversFaced", null, new { @class = "form-control", @type = "number", @value = "10", max = 10 })
+                            <br />
+                        </div>
+                    </div>
+
+                    @*Away Overs Faced*@
+                    <div class="form-group">
+                        @Html.Label("AWAY OVERS FACED", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBox("AOversFaced", null, new { @class = "form-control", @type = "number", @value = "10", max = 10 })
+                            <br />
+                        </div>
+                    </div>
+
+                    @*Home Wickets*@
+                    <div class="form-group">
+                        @Html.Label("HOME WICKETS", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBox("HWickets", null, new { @class = "form-control", @type = "number", max = 10 })
+                            <br />
+                        </div>
+                    </div>
+
+                    @*Away Wickets*@
+                    <div class="form-group">
+                        @Html.Label("AWAY WICKETS", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBox("AWickets", null, new { @class = "form-control", @type = "number", max = 10 })
+                            <br />
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input style="color:white;background-color:blue" type="submit" value="Update" class="btn btn-default" />
+                        </div>
+                    </div>
+
+
+                }
+
+                
+        </div>
+
+</div>
+           </div>
+}
+   
+
+
+
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://safest.link/wp-content/uploads/2015/06/Hd-Wall-Backgrounds-Hd-Cool-HD-Wallpapers.jpg');
+    }
+</style>

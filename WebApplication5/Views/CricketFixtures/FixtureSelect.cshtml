@@ -1,0 +1,74 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model IEnumerable<WebApplication5.Models.CricketFixtures>
+
+
+@{
+    ViewBag.Title = "FixureSelect";
+}
+<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:blue">
+    <div class="panel-heading" style="background-color:black;border-color:blue"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">CREATE FIXTURES</h1></div>
+    <div class="panel-body" style="background-color:black;border-color:blue">
+
+        <div style="color:white">
+            @using (Html.BeginForm())
+            {
+
+                <center><div class="form-group">@Html.DropDownList("ddlS", null, "SELECT DIVISION", new { @class = "form-control", onchange = "this.form.submit();" })</div></center><br />
+                <center><p style="color:red">@Session["error"].ToString()</p></center>
+                <br /><br /><br />
+                <table class="table">
+                    <tr style="color:white">
+                        <th>
+                            @Html.Label("MATCHES")
+                        </th>
+
+                        <th>
+                            @Html.Label("MATCH UMPIRE")
+                        </th>
+                        <th>
+                            @Html.Label("EDIT MATCH")
+                        </th>
+                        <th></th>
+                    </tr>
+                    @if (Session["fix"].ToString() == "true")
+                    {
+                        foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.fixture)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.refID)
+                                </td>
+
+
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+
+                                </td>
+                            </tr>
+                        }
+                    }
+                </table>
+
+            }
+            <p style="color:black">.</p>
+
+
+
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://safest.link/wp-content/uploads/2015/06/Hd-Wall-Backgrounds-Hd-Cool-HD-Wallpapers.jpg');
+    }
+</style>

@@ -1,0 +1,128 @@
+﻿@model IEnumerable<WebApplication5.Models.CricketPlayers>
+
+
+@{
+    ViewBag.Title = "CricketP";
+}
+<h1 style="font-size:medium;color:white">SELECT SPORT|PERSONAL DETAILS|<a style="font-size:medium;color:yellow">ADD PLAYERS</a>|CONFIRM DETAILS|PAYMENT</h1>
+
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:red">
+    <div class="panel-heading" style="background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px"> ADD PLAYER</h1></div>
+    <div class="panel-body" style="background-color:black">
+
+        <div class="container">
+
+            <div class="container" style="color:red">
+                <form method="post" action="CricketP">
+                    <div class="form-group">
+                        @Html.Label("FIRST NAME", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="text" id="firstN" name="firstN" placeholder="ENTER FIRST NAME" class="form-control" /><br />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("LAST NAME", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="text" id="lastN" name="lastN" placeholder="ENTER LAST NAME" class="form-control" /><br />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.Label("EMAIL", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="text" id="Email" name="Email" placeholder="ENTER EMAIL ADDRESS" class="form-control" /><br />
+                        </div>
+                    </div>
+
+
+                    <div class="form-group" style="color:red">
+                        @Html.Label("SELECT PLAYER ROLE", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <select class="form-control" id="roles" name="roles">
+                                <option value="">SELECT PLAYER ROLE</option>
+                                <option value="CAPTAIN">CAPTAIN</option>
+                                <option value="VICE-CAPTAIN">VICE CAPTAIN</option>
+                                <option value="FULL TIME">FULL TIME</option>
+                                <option value="ROTATION">ROTATION</option>
+                            </select>
+                        </div><br />
+                    </div><p style="color:red">@Session["ddlr"].ToString()</p><p style="color:red">@Session["cap"].ToString()</p>
+                    
+                    <p style="color:black">.</p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+                    <button style="color:red" class="btn btn-default" type="Submit">SAVE PLAYER</button><br />
+
+                </form>
+            </div>
+        </div>
+        <br /><br /><br />
+        <div class="panel-heading" style="border-top:solid;border-bottom:solid;background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:75px">@Session["teamName"].ToString() PLAYERS</h1></div>
+        <br />
+        <table class="table" style="color:white">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.firstName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.lastName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TeamN)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.EmailAdd)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PlayerRole)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr style="color:white">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.firstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.lastName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TeamN)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.EmailAdd)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PlayerRole)
+                    </td>
+
+                    <td>
+
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+        @* <p style="color:red">@Session["capP"].ToString()</p>*@
+        <p style="color:red">@Session["teamPlayer"].ToString()</p><p style="color:red">@Session["roles3"].ToString()</p>
+        @*<p class="button">
+                <a href="http://localhost:42139/payment.aspx?total=@Session["Amount"].ToString()&div=@Session["Division"].ToString()&teamN=@Session["teamName"]&sportT=@Session["SportType"].ToString()"> Make Payment </a>
+            </p>*@
+        <input   style="color:red" class="btn btn-default" type="button" value="PROCEED" onclick="location.href='@Url.Action("VerifyS", "CricketPlayers")'" />
+       
+    </div>
+</div>
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+    }
+</style>

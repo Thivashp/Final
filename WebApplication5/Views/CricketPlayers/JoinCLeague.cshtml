@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "JoinCLeague";
+}
+
+<br><br />
+<div class="panel panel-primary" style="border-color:red">
+    <div class="panel-body" style="background-color:black">
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="panel-heading" style="background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">ADD TEAM</h1></div>
+            <br />
+
+            <div class="form-group">
+                @Html.Label("SELECT DIVISION", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <div class="form-group">@Html.DropDownList("ddlS", null, "SELECT DIVISION:", new { @class = "form-control" })</div><p style="color:red">@Session["ddlS"].ToString()</p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("TEAM NAME", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="text" id="firstN" name="teamN" placeholder="ENTER TEAM NAME" class="form-control" /><br /><p style="color:red">@Session["ValidateTeam"].ToString()</p>
+                </div>
+            </div>
+            <div class="form-group">
+                @Html.Label("SELECT TYPE", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <select class="form-control" id="teamType" name="teamType">
+                        <option value="">No Type Selected</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Mixed">Mixed</option>
+                    </select><p style="color:red">@Session["ddlT"].ToString()</p>
+                </div>
+            </div>
+            <br />
+            <br />
+            <br />
+            <br />
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="SUBMIT" class="btn btn-default" />
+                </div>
+            </div>
+
+        }
+
+    </div>
+</div>

@@ -1,0 +1,93 @@
+﻿@model WebApplication5.Models.umpire
+
+@{
+    ViewBag.Title = "Umpire";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <br />
+    <br />
+    <br />
+    <br />
+    <div class="panel panel-primary" style="border-color:blue">
+        <div class="panel-heading" style="background-color:black;border-color:blue"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">ADD UMPIRE</h1></div>
+        <div class="panel-body" style="background-color:black;border-color:blue">
+
+            <br />
+
+            <div class="form-horizontal" style="color:white">
+                <label style="color:red;font-size:large">@Session["validate1"]</label>
+                <br />
+                <br />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Surname, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Surname, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Surname, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.emailAdd, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.emailAdd, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.emailAdd, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Sdate, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Sdate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Sdate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.yearsOXP, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.yearsOXP, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.yearsOXP, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Gender, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-2">
+                        Male <input type="radio" name="gender" id="male" value="Male" /> Female <input type="radio" name="gender" id="Female" value="Female" checked="checked" />
+                    </div>
+                </div>
+
+
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input style="background-color:blue;color:white" type="submit" value="Register" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+
+
+
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://safest.link/wp-content/uploads/2015/06/Hd-Wall-Backgrounds-Hd-Cool-HD-Wallpapers.jpg');
+    }
+</style>

@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Confirm Email";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<h2>@ViewBag.Title.</h2>
+<div style="color:white">
+    <p>
+        Thank you for confirming your email. Please @Html.ActionLink("Click here to Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })
+    </p>
+</div>
+
+<style>
+    body {
+        padding: 50px;
+       
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+       color:white;
+    }
+</style>

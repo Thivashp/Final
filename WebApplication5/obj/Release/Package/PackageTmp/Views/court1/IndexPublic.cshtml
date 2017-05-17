@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:red">
+    <div class="panel-heading" style="background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">SELECT COURT</h1></div>
+    <div class="panel-body" style="background-color:black;border-color:red">
+
+
+
+
+        <table>
+
+            <tr>
+                <td>
+
+                <th style="border:solid">
+                    <div class="brightness">
+                        <div class="image">
+                            <a href="~/court1/Public"><img src="~/Content/Images/court1.png"></a>
+                            <h2><span>COURT 1</span></h2>
+                        </div>
+                    </div>
+                </th>
+                <th style="border:solid">
+                    <div class="brightness">
+                        <div class="image">
+                            <a href="~/court2/Public"><img src="~/Content/Images/court1.png"></a>
+                            <h2><span>COURT 2</span></h2>
+                        </div>
+                    </div>
+                </th>
+                <th style="border:solid">
+                    <div class="brightness">
+                        <div class="image">
+                            <a href="~/court3/Public"><img src="~/Content/Images/court1.png"></a>
+                            <h2><span>COURT 3</span></h2>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+
+
+        </table>
+        <br />
+        <br />
+
+
+
+
+    </div>
+</div>
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+    }
+
+    .image {
+        position: relative;
+        width: 300PX;
+    }
+
+    h2 {
+        position: absolute;
+        top: 100px;
+        left: 0;
+        width: 150px;
+    }
+
+        h2 span {
+            color: white;
+            /*font: bold 24px/45px Helvetica, Sans-Serif;*/
+            letter-spacing: -1px;
+            background: rgba(0,0,0);
+            background: rgba(0,0,0,0.7);
+            padding: 10px;
+        }
+
+    .brightness {
+        background-color: white;
+        display: inline-block;
+    }
+
+        .brightness img:hover {
+            opacity: .5;
+        }
+
+    table {
+        width: 100%;
+    }
+
+    th {
+        text-align: center;
+    }
+</style>
+
+
+

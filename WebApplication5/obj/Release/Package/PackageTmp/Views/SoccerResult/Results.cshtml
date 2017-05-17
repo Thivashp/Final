@@ -1,0 +1,89 @@
+﻿@model WebApplication5.Models.SoccerResults
+
+@{
+    ViewBag.Title = "Results";
+}
+<br />
+<br />
+<br /><br />
+<div class="panel panel-primary" style="border-color:blue">
+    <div class="panel-heading" style="background-color:black;border-color:blue"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">UPDATE SOCCER RESULT(S)</h1></div>
+    <div class="panel-body" style="background-color:black;border-color:blue">
+
+        <div style="color:white">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.Label("SELECT DIVISION", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="form-group">@Html.DropDownList("ddld", null, "SELECT DIVISION:", new { @class = "form-control", onchange = "this.form.submit();" })</div>
+                    </div>
+                </div>
+                <center><label style="color:red;font-size:large">@Session["validate2"]</label></center>
+                if (Session["check"].ToString() == "True")
+                {
+                    <div class="form-group">
+                        @Html.Label("SELECT TEAM", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <div class="form-group">@Html.DropDownList("ddlf", null, "SELECT DIVISION:", new { @class = "form-control", onchange = "this.form.submit();" })</div>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.Label("HOME TEAM", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="text" name="AwayTeam" value="@Session["home"]" class="form-control" readonly />
+                            <br />
+                        </div>
+                    </div>
+                    <br />
+                    <div class="form-group">
+                        @Html.Label("AWAY TEAM", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            <input type="text" name="AwayTeam" value="@Session["away"]" class="form-control" readonly />
+                            <br />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.Label("HOME GOAL(S)", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.TextBox("HomeGoals", null, new { @class = "form-control", @type = "number" })<p style="color:red">@Session["goals"]</p>
+                            <br />
+                        </div>
+                        <br />
+                        <div class="form-group">
+                            @Html.Label("AWAY GOAL(S)", htmlAttributes: new { @class = "control-label col-md-2" })
+                                
+                                <div class="col-md-10">
+                                    @Html.TextBox("AwayGoals", null, new { @class = "form-control", @type = "number" })<p style="color:red">@Session["goals1"]</p>
+
+
+                                    <br />
+                                </div>
+</div>
+                        <br />
+
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input style="color:white;background-color:blue" type="submit" value="Update" class="btn btn-default" />
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            
+        </div>
+    </div>
+</div>
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://safest.link/wp-content/uploads/2015/06/Hd-Wall-Backgrounds-Hd-Cool-HD-Wallpapers.jpg');
+    }
+</style>
+
+

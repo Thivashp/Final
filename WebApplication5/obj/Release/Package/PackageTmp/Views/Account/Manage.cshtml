@@ -1,0 +1,39 @@
+﻿@using WebApplication5.Models;
+@using Microsoft.AspNet.Identity;
+@{
+    ViewBag.Title = "Manage Account";
+}
+<br /><br />
+<div class="panel panel-primary">
+    <div class="panel-heading" style="background-color:#2f5b26"><h1 style="font-family:Impact" font:larger">Change Password</h1></div>
+    <div class="panel-body" style="background-color:black">
+
+
+        <h2>@ViewBag.Title.</h2>
+
+        <p class="text-success">@ViewBag.StatusMessage</p>
+        <div class="row">
+            <div class="col-md-12">
+                @if (ViewBag.HasLocalPassword)
+            {
+                    @Html.Partial("_ChangePasswordPartial")
+                }
+                else
+                {
+                    @Html.Partial("_SetPasswordPartial")
+                }
+
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+    }
+</style>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

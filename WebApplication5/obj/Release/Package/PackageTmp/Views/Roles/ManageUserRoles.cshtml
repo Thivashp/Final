@@ -1,0 +1,67 @@
+﻿@model IEnumerable<Microsoft.AspNet.Identity.EntityFramework.IdentityUser>
+
+@{
+    ViewBag.Title = "Roles";
+}
+<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:blue">
+    <div class="panel-heading" style="background-color:black;border-color:blue"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">MANAGE ROLES</h1></div>
+    <div class="panel-body" style="background-color:black;border-color:blue">
+
+        <br />
+
+
+
+
+        <hr />
+        <h3>@Html.ActionLink("Create Role", "Create") | @Html.ActionLink("All Roles", "Index")</h3>
+        <hr />
+
+        <h3 style="font-family:'Adobe Arabic';color:white;font-size:25px">Update Role</h3>
+
+        @using (Html.BeginForm("RoleAddToUser", "Roles"))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <p style="color:white;font-size:large;font-family:'Times New Roman'">
+                Username : @Html.DropDownList("UserName", (IEnumerable<SelectListItem>)ViewBag.Users, "Select ...")
+                Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
+
+
+            </p>
+
+            <p style="color:black">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;.<input type="submit" value="Save" class="form-control" style="background-color:blue; color:white; height:30px;width:130px" /></p>
+        }
+        <hr />
+
+
+        <hr />
+        <h3 style="font-family:'Adobe Arabic';color:white;font-size:25px">Remove User Roles</h3>
+
+        @using (Html.BeginForm("DeleteRoleForUser", "Roles"))
+            {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+            <p style="color:white;font-size:large;font-family:'Times New Roman'">
+                Username : @Html.DropDownList("UserName", (IEnumerable<SelectListItem>)ViewBag.Users, "Select ...")
+                Role Name: @Html.DropDownList("RoleName", (IEnumerable<SelectListItem>)ViewBag.Roles, "Select ...")
+
+            </p>
+
+            <input type="submit" value="Remove" class="form-control" style="background-color:blue; color:white; height:30px;width:130px" />
+        }
+
+
+    </div>
+</div>
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://safest.link/wp-content/uploads/2015/06/Hd-Wall-Backgrounds-Hd-Cool-HD-Wallpapers.jpg');
+    }
+</style>

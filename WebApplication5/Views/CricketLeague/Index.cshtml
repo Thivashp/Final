@@ -1,0 +1,73 @@
+﻿@model IEnumerable<WebApplication5.Models.CricketLeagues>
+
+@{
+    ViewBag.Title = "Cricket Division";
+}
+
+<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:blue">
+    <div class="panel-heading" style="background-color:black;border-color:blue"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">CRICKET DIVISION(S)</h1></div>
+    <div class="panel-body" style="background-color:black;border-color:blue">
+
+        <br />
+
+        <p>
+            @Html.ActionLink("ADD NEW DIVISION", "Create")
+        </p>
+        <table class="table">
+            <tr style="color:white">
+                <th>
+                    @Html.DisplayNameFor(model => model.leagueTitle)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.category)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sdate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.regFee)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CostPR)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr style="color:white">
+                    <td>
+                        @Html.DisplayFor(modelItem => item.leagueTitle)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.category)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sdate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.regFee)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CostPR)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.IdV }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.IdV })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://safest.link/wp-content/uploads/2015/06/Hd-Wall-Backgrounds-Hd-Cool-HD-Wallpapers.jpg');
+    }
+</style>

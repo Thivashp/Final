@@ -1,0 +1,27 @@
+﻿<br />
+<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary">
+    <div class="panel-heading" style="background-color:#292929"><h1 style="font-family:Impact" font:larger">Password Reset</h1></div>
+    <div class="panel-body">
+       
+
+        @using (Html.BeginForm("ResPas", "Account", FormMethod.Post))
+        {
+
+            @Html.TextBox("email")@ViewBag.s
+            <input type="submit" value="email password" style="background-color:#292929; color:white; height:30px;width:170px" />
+            <br />
+        }
+        </div>
+</div>
+
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+        color:white;
+    }
+</style>

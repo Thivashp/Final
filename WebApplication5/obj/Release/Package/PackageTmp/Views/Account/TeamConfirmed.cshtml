@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Confirm_Team";
+}
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<h2 style="color:greenyellow">You are Registering to play under @if (Session["team"].ToString() != null){<p>@Session["team"].ToString()</p>} team</h2>
+<div style="font-size:x-large">
+    @Html.ActionLink("Register", "Register")
+    </div>
+
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+        color:white;
+    }
+</style>

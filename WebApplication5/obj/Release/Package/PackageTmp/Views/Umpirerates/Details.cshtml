@@ -1,0 +1,114 @@
+﻿@model WebApplication5.Models.Umpirerate
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Umpirerate</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.homerating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.homerating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.awayrating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.awayrating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.refID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.refID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fixture)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fixture)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.home)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.home)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.away)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.away)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.played)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.played)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.done)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.done)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.homedone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.homedone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.awaydone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.awaydone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.hrating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.hrating)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.arating)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.arating)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

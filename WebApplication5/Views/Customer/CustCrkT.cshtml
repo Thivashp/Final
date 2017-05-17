@@ -1,0 +1,143 @@
+﻿@model IEnumerable<WebApplication5.Models.CricketTeams>
+
+@{
+    ViewBag.Title = "CustSocT";
+}
+<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:red">
+    <div class="panel-heading" style="background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">CRICKET TEAM</h1></div>
+    <div class="panel-body" style="background-color:black">
+
+        <div style="color:red">
+            @using (Html.BeginForm())
+            {
+                <table class="table">
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.TeamN)
+                        </th>
+
+                        <th>
+                            @Html.DisplayNameFor(model => model.Div)
+                        </th>
+
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.TeamN)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Div)
+                            </td>
+
+                        </tr>
+                    }
+
+                </table>
+
+                <br />
+                <br />
+
+                <div class="form-group">
+                    @Html.Label("SELECT DIVISION", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        <div class="form-group">@Html.DropDownList("selectT", null, "SELECT TEAM:", new { @class = "form-control", onchange = "this.form.submit();" })</div><p style="color:red">@Session["Validation"].ToString()</p>
+                    </div>
+                </div>
+
+                if ((List<WebApplication5.Models.CricketPlayers>)ViewBag.List != null)
+                {
+                    <table class="table">
+                        <tr>
+                            <th>
+                                @Html.Label("FIRST NAME")
+                            </th>
+
+                            <th>
+                                @Html.Label("LAST NAME")
+                            </th>
+                            <th>
+                                @Html.Label("EMAIL ADDRESS")
+                            </th>
+
+                            <th>
+                                @Html.Label("PLAYER ROLE")
+                            </th>
+
+                            <th></th>
+                        </tr>
+
+                        @if ((List<WebApplication5.Models.CricketPlayers>)ViewBag.List != null)
+                        {
+                            foreach (var item in (List<WebApplication5.Models.CricketPlayers>)ViewBag.List)
+                            {
+
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.firstName)
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.lastName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.EmailAdd)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.PlayerRole)
+                                    </td>
+
+                                </tr>
+                            }
+
+
+                        }
+                    </table>
+                    if (Session["email3"].ToString() == "True")
+                    {
+
+                        <div class="form-group">
+                            @Html.Label("SUBJECT", new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextBox("subject", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <br /><br /><br />
+                        <div class="form-group">
+                            @Html.Label("MESSAGE", new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                @Html.TextArea("message", null, new { @class = "form-control" })
+                            </div>
+                        </div>
+                        <br /><br /><br /><br />
+                        <div class="form-group">
+                            <div class="col-md-offset-2 col-md-10">
+                                <input type="submit" value="Send" class="btn btn-default" />
+                            </div>
+                        </div>
+                    }
+                }
+            } <p style="color:red">@Session["emailResult"].ToString()</p>
+            </div></div></div>
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+    }
+    
+    th{
+        color:red
+    }
+    td{
+        color:white
+    }
+</style>
+

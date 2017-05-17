@@ -1,0 +1,86 @@
+﻿    ViewBag.Title = "RegistrationType";
+
+<br /><br />
+<div class="panel panel-primary" style="border-color:red">
+    @*<div class="panel-heading" style="background-color:#2f5b26"><h1 style="font-family:Impact" font:larger">Registration Type</h1></div>*@
+    <div class="panel-heading" style="background-color:black; border-color:red;"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">REGISTRATION TYPE</h1></div>
+
+    <div class="panel-body" style="background-color:black">
+
+
+        <br /><br />
+
+        <table align="center" style="background-color:black">
+            <tr>
+                <th>
+                    <div class="brightness">
+                        <div class="image">
+                            <a href="~/Home/SelectReg"><img src="~/images/team1.png"></a>
+                            @*<h3><span>Team Register</span></h3>*@
+                        </div>
+                    </div>
+                    <div class="t">
+                        <a>@Html.ActionLink("League Registration", "SelectReg", "Home", new { @class = "my-class" })</a>
+                    </div>
+
+                </th>
+                <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+                <th>
+                    <div class="brightness">
+                        <div class="image">
+                            @*<a href="~/Account/Register3"><img src="~/images/individual.png"></a>*@
+                            <a href="~/Account/Register3"><img src="~/images/individual1.png"></a>
+                            @*<h2><span>Individual Register</span></h2>*@
+                        </div>
+                    </div>
+                    <div class="t">
+                        <a>@Html.ActionLink("Individual Registration", "Register3", "Account", new { @class = "my-class" })</a>
+                    </div>
+                </th>
+            </tr>
+        </table>
+        <br /><br />
+    </div>
+</div>
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+    }
+
+    .image {
+        position: relative;
+        width: 100%;
+    }
+
+    .t {
+        text-align: center;
+        font-size: 30px;
+        background-color: black;
+    }
+
+    .brightness {
+        background-color: white;
+        display: inline-block;
+    }
+
+        .brightness img:hover {
+            opacity: .5;
+        }
+
+    img {
+        width: 300px;
+        height: 300px;
+        background-color: black;
+    }
+
+    th {
+        border: solid;
+        border-color: black;
+        color: #FDB548;
+    }
+
+    a.my-class {
+        color: white;
+    }
+</style>

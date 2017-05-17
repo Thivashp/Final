@@ -1,0 +1,36 @@
+﻿<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:blue">
+    <div class="panel-heading" style="background-color:black;border-color:blue"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">CREATE ROLE</h1></div>
+    <div class="panel-body" style="background-color:black;border-color:blue">
+
+        <br /> <br />
+        <h3 style="font-size:x-large">@Html.ActionLink("All Roles", "Index") | @Html.ActionLink("Role Management", "ManageUserRoles")</h3>
+        <hr style="color:blue"/>
+        <hr style="color:blue" />
+        <br />
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            <center>
+                <div style="color:White;font-size:large;font-family:'Times New Roman'">
+                    ROLE NAME
+                </div>
+                <p>
+                    @Html.TextBox("RoleName", null, new { @class = "form-control" })
+                </p><br />
+                <input type="submit" value="Save" class="form-control" style="background-color:blue; color:white; height:30px;width:100px" />
+              
+            </center>
+        }
+    </div>
+</div>
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://safest.link/wp-content/uploads/2015/06/Hd-Wall-Backgrounds-Hd-Cool-HD-Wallpapers.jpg');
+    }
+</style>

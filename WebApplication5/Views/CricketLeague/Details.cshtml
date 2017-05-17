@@ -1,0 +1,57 @@
+﻿@model WebApplication5.Models.CricketLeagues
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<div>
+   
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.leagueTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.leagueTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.category)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.category)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sdate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.regFee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.regFee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CostPR)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CostPR)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IdV }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,163 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+   margin: 0;
+   padding: 0;
+   border: 0;
+   font-size: 100%;
+   font: inherit;
+   vertical-align: baseline;
+}
+
+/* HTML5 */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+   display: block;
+}
+
+body {
+   line-height: 1;
+}
+
+ol, ul {
+   list-style: none;
+}
+
+blockquote, q {
+   quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+   content: '';
+   content: none;
+}
+
+table {
+   border-collapse: collapse;
+   border-spacing: 0;
+}
+
+/* Typography */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+/* Global */
+*,
+*:before,
+*:after {
+   box-sizing: border-box;
+}
+
+/* Base */
+body {
+   font-family: 'Open Sans', sans-serif;
+   background: #EEEEEE;
+   
+   animation-name: background;
+   animation-duration: 30s;
+   animation-iteration-count: infinite; 
+   animation-timing-function: ease-out;
+}
+
+body:before {
+   content: '';
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+}
+
+/* Accordion */
+/* Basic Accordion Styles */
+.accordion {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   width: 75%;
+   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+}
+
+.accordion input[name='panel'] {
+   display: none;
+}
+
+.accordion label {
+   position: relative;
+   display: block;
+   padding: 1em;
+   background: linear-gradient(to bottom, #FEFEFE 0%, #D1D1D1 50%, #DBDBDB 55%, #E2E2E2 100%);
+   border-top: 1px solid #FFF;
+   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+   box-shadow: inset 0 2px 0 #FFF;
+   font-size: 1.5em;
+   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.75);
+   color: #666666;
+   cursor: pointer;
+   transition: all 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
+}
+
+.accordion label:after {
+   content: '+';
+   position: absolute;
+   right: 1em;
+   width: 1em;
+   height: 1em;
+   color: #EEEEEE;
+   text-align: center;
+   border-radius: 50%;
+   background: #436EEE;
+   box-shadow: inset 0 1px 6px rgba(0, 0, 0, 0.5), 0 1px 0 white;
+   text-shadow: 0 1px 0 rgba(0, 0, 0, 0.75);
+}
+
+.accordion label:hover {
+   color: #436EEE;
+}
+
+.accordion input:checked + label {
+   color: #436EEE;
+}
+
+.accordion input:checked + label:after {
+   content: '-';
+   line-height: .8em;
+}
+
+.accordion .accordion__content {
+   overflow: hidden;
+   max-height: 0em;
+   position: relative;
+   padding: 0 1.5em;
+   box-shadow: inset 4px 0 0 0 #436EEE, inset 0 3px 6px rgba(0, 0, 0, 0.75);
+   background: #444444;
+   background: linear-gradient(to bottom, #444444 0%, #222222 100%);
+   color: #EEEEEE;
+   transition: all 0.4s cubic-bezier(0.865, 0.14, 0.095, 0.87);
+}
+
+.accordion .accordion__content:not(:last-of-type) {
+   box-shadow: inset 0 -2px 2px rgba(0, 0, 0, 0.25), inset 4px 0 0 0 #436EEE, inset 0 3px 6px rgba(0, 0, 0, 0.75);
+}
+
+.accordion .accordion__content .accordion__header {
+   padding: 1em 0;
+}
+
+.accordion .accordion__content .accordion__body {
+   padding: 0 0 1.5em;
+   font-size: .825em;
+   line-height: 1.4em;
+}
+
+input[name='panel']:checked ~ .accordion__content {
+   max-height: 50em;
+}
+
+/*@keyframes background {
+   0%   {background-image: url('soccer.jpg');}
+   25%  {background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');}
+   50%  {background-image: url('soccer.jpg');}
+   75%  {background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');}
+   100%  {background-image: url('soccer.jpg');}
+}*/
+
+

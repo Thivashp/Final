@@ -1,0 +1,85 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="background-color:black;border-color:red ">
+    <div class="panel-heading" style="background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">CONTACT</h1></div>
+    <div class="panel-body" style="background-color:transparent">
+        <div style="color:white">
+            <table align="center">
+                <tr>
+                    <th>
+                        <b><u>Call Us</u></b>
+                        <br />
+                        031 267 0181
+                        <br /><br />
+
+                        <b><u>Business Hours</u></b>
+                        <br />
+                        Mon - Thurs : 10AM - 9PM<br />
+                        Friday: 10AM - 10PM<br />
+                        Sat - Sun : 10AM - 9PM
+
+                        <br /><br />
+                        <b><u>Motion Inc. Arena</u></b><br />
+                        The Basement(Shop B002)<br />
+                        Westwood Mall<br />
+                        16 Lincoln Terrace<br />
+                        Westville<br />
+                        KwaZulu Natal<br />
+                        3630<br />
+                        <a href="motioninc@augholdings.com">motioninc@augholdings.com</a>
+                    </th>
+                    <th>
+                        <div id="map">
+                            <script async defer
+                                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDprqbLCw8-JIK2sFAtKWowzkn0OMIBMqg&callback=initMap">
+                            </script>
+                            <script>
+                                var Mapkey = 'AIzaSyDprqbLCw8-JIK2sFAtKWowzkn0OMIBMqg';
+
+                                var map;
+                                function initMap() {
+                                    var MotionInc = { lat: -29.8283755, lng: 30.9612803 };
+                                    var map = new google.maps.Map(document.getElementById('map'), { zoom: 15, center: MotionInc });
+
+                                    var marker = new google.maps.Marker({ position: MotionInc, map: map });
+
+                                    var popup = 'Visit us at:<br/>';
+                                    popup += 'B10 Westwood Mall';
+                                    popup += 'Westville';
+                                    popup += 'KwaZulu-Natal ';
+                                    popup += '3609';
+
+                                    var infowindow = new google.maps.InfoWindow({ content: popup, maxWidth: 200 });
+
+
+                                    marker.addListener('click', function () { infowindow.open(map, marker); });
+                                }
+
+                            </script>
+                        </div>
+                    </th>
+                </tr>
+            </table>
+
+            </div>
+        </div>
+</div>
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+    }
+    #map{
+        width:500px;
+        height:400px;
+        margin:0 auto; 
+    }    table{
+        width:100%
+
+    }
+</style>

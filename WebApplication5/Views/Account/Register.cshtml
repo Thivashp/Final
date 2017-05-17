@@ -1,0 +1,131 @@
+﻿@model WebApplication5.Models.RegisterViewModel
+@{
+
+}
+<br />
+<br />
+<br />
+<br />
+<h2>@ViewBag.Title</h2>
+
+
+
+
+<div class="panel panel-primary" style="background-color:black;border-color:blue ">
+    <div class="panel-heading" style="background-color:black;border-color:blue"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">EMPLOYEE REGISTRATION</h1></div>
+    <div class="panel-body" style="background-color:transparent">
+
+
+
+
+
+
+        @using (Html.BeginForm("Register2", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+
+
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <br />
+            <div style="color:white">
+                <div class="form-group">
+
+                    @Html.LabelFor(m => m.firstN, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.firstN, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.firstN, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.lastN, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.lastN, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.lastN, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+                        @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })<p style="color:red">@Session["email"].ToString()</p>
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(m => m.phoneNum, new { @class = "col-md-2 control-label" })
+                    <div class="col-md-10">
+                        @Html.TextBoxFor(m => m.phoneNum, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.phoneNum, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control", @placeholder = "Address line 1" } })
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })<br />
+                        <input type="text" id="add2" name="add2" placeholder="Address line 2" class="form-control" /><br />
+                        <input type="text" id="post" name="post" placeholder="Postal Code" class="form-control" />
+                        @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                    </div>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Gender, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-2">
+
+                            <br />        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Male <input type="radio" name="gender" id="male" value="Male" />Female <input type="radio" name="gender" id="Female" value="Female" checked="checked" />
+                        </div>
+                    </div>
+                    @*</div>*@
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" class="form-control" value="Register" style="background-color:blue; color:white; height:30px;width:100px" />
+                    </div>
+                </div>
+
+            </div>
+        }
+
+    </div>
+</div>
+
+<style>
+    body {
+        padding: 50px;
+        background-image: url('http://safest.link/wp-content/uploads/2015/06/Hd-Wall-Backgrounds-Hd-Cool-HD-Wallpapers.jpg');
+    }
+</style>
+
+
+
+
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+}

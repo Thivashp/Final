@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "ExistingPlayer";
+}
+<br />
+<br />
+
+<div class="panel panel-primary">
+    <div class="panel-heading" style="background-color:#292929"><h1 style="text-align:center;font-family:Impact">  Existing Player</h1></div>
+    <div class="panel-body">
+
+        <h1 style="text-align:center;font-family:Impact">@Session["email1"].ToString() PLayer Already Exists  </h1>
+        <h1 style="text-align:center;font-family:Impact">Would you like to approach @Session["name"].ToString() to join your team?</h1>
+
+
+        
+            
+                <input type="submit" value="PROCEED" class="btn btn-default" onclick="location.href='@Url.Action("ExistingPlayer1", "SoccerPlayers")'" />&nbsp;&nbsp;&nbsp;&nbsp;<input class="btn btn-default" type="button"  value="RETURN" onclick="location.href='@Url.Action("SoccerP", "SoccerPlayers")'"/>
+        </div>
+    </div>
+    
+

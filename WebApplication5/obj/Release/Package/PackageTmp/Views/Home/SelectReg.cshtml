@@ -1,0 +1,69 @@
+﻿
+@{
+    ViewBag.Title = "SelectReg";
+}
+<br />
+
+<h1 style="font-size:20px;color:white"><a style="font-size:20px;color:yellow">SELECT SPORT</a>|PERSONAL DETAILS|ADD PLAYERS|CONFIRM DETAILS|PAYMENT</h1>
+<br /><br />
+
+<div class="panel panel-primary" style="border-color:red">
+    <div class="panel-heading" style="background-color:black;border-color:red"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px"> SELECT SPORT</h1></div>
+    <div class="panel-body" style="background-color:black">
+      @*&nbsp;&nbsp;&nbsp;&nbsp;<a href="~/LeagueRegistration/Create"><img src="~/images/soccer.jpg"></a><a href="~/CLeagueRegistrations/Create"><img border="0" alt="W3Schools" src="~/images/Cricket.jpg"></a>*@
+
+        <table align="center">
+            <tr>
+                <th style="border:solid">
+                    <div class="brightness">
+                        <div class="image">
+                            <a href="~/LeagueRegistration/Create"><img src="~/images/soccer.jpg"></a>
+                            <h2><span>SOCCER</span></h2>
+                        </div>
+                    </div>
+                </th>
+                <th style="border:solid">
+                    <div class="brightness">
+                        <div class="image">
+                            <a href="~/CLeagueRegistrations/Create"><img src="~/images/Cricket.jpg"></a>
+                            <h2><span>CRICKET</span></h2>
+                        </div>
+                    </div>
+                </th>
+            </tr>
+        </table>
+
+    </div>
+</div>
+<style>*
+     body {
+                padding: 50px;
+                background-image: url('http://content.wallpapers-room.com/resolutions/1400x1050/P/Wallpapers-room_com___Plain_Grass_by_sniperyu_1400x1050.jpg');
+            }
+.image{
+        position:relative;
+        width:100%;
+    }
+    h2{
+        position:absolute;
+        top:200px;
+        left:0;
+        width:100px;
+    }
+    h2 span{
+        color:white;
+        /*font: bold 24px/45px Helvetica, Sans-Serif;*/ 
+        letter-spacing:-1px;
+        background: rgba(0,0,0);
+        background: rgba(0,0,0,0.7);
+        padding:10px;
+    }
+    .brightness {
+    background-color: white;
+    display: inline-block;
+
+    }
+    .brightness img:hover {
+    opacity: .5;
+    }
+</style>

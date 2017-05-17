@@ -1,0 +1,42 @@
+﻿<br /><br /><br />
+<br />
+<br />
+<br />
+<br />
+<div class="panel panel-primary" style="border-color:blue">
+    <div class="panel-heading" style="background-color:black;border-color:blue"><h1 style="text-align:center;font-family:'Adobe Arabic';color:white;font-size:100px">VERIFY BOOKING</h1></div>
+    <div class="panel-body" style="background-color:black;border-color:blue">
+
+        <div class="form-group" style="color:white">
+            @Html.Label("Sport Code:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Label(Session["title"].ToString())
+            </div>
+        </div>
+
+        <div class="form-group" style="color:white">
+            @Html.Label("Start Time:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Label(Session["start"].ToString())
+            </div>
+        </div>
+        <div class="form-group" style="color:white">
+            @Html.Label("End Time:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Label(Session["end"].ToString())
+            </div>
+        </div>
+        <div class="form-group" style="color:white">
+            @Html.Label("Booking Amount:", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.Label(Session["Amount"].ToString())
+            </div>
+        </div>
+        <br />
+        <br />
+        <p class="button">
+            <a class="form-group" href="~/payment.aspx?total=@Session["Amount"].ToString()&start=@Session["start"].ToString()&end=@Session["end"].ToString() &title=@Session["title"].ToString()&full=@Session["IsFullDay"]"> Make Payment </a>
+        </p>
+
+    </div>
+</div>
